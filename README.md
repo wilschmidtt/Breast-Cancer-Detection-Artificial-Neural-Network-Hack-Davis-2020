@@ -5,7 +5,7 @@ Still in the process of updating repo
 #### The Event 
 UC Davis's Premir Hack-A-Thon for social good! On January 18-19, over 600 students, hackers, and creators came together for 24 hours of hacking. For the 5th year in a row, the most talented students in California come together to address the world’s most pressing issues. Participants are able to build projects that address any social good initiatives.
 #### Team's Solution
-Build and train an Artificial Neural Network that predicts, based on numerical data, whether or not the data in question indicates the presence of breast cancer. The returns its prediction (as a precentage) for both the probability that the data in question is malignant and the probability that the data in question is benign. The two prediction percentages will add up to 100. [View Project Website Here](https://devpost.com/software/ml-diagnose)
+Build and train an Artificial Neural Network that predicts, based on CSV data, whether or not the data in question indicates the presence of breast cancer. The ANN returns its prediction as the probability that the data in question is malignant and the probability that the data in question is benign. The two prediction percentages will add up to 100. [View Project Website Here](https://devpost.com/software/ml-diagnose)
 
 ### Prerequisites
 * Anaconda (Python 3.7 Version)
@@ -26,22 +26,21 @@ Build and train an Artificial Neural Network that predicts, based on numerical d
 
 ## Running the tests
 
-* First, download the files titled brain_tumor_model.json and brain_tumor_model.h5 and save them to a desired directory.
-* Next, open Anaconda, launch Spyder (used version 3.3.6 to create this program), and run the program titled: brain_tumor_prediction_regression.py
-  - NOTE: There is another file titled Brain_Hemorrhage_CNN.py. This file contains much of the same code as brain_tumor_prediction_regression.py; however, this is the module that was used to train the CNN, and running it will take a significant amount of time. The regression equation has been exported to the brain_tumor_prediction_regression.py file, so this one will be much quicker to run.
-* Next, user will need to change the program lines containing the directories of the .json and .h5 files that were used to store the regression equation. The line used to open the .json file looks as follows: `json_file = open('/content/drive/My Drive/Brain Tumor CNN/brain_tumor_model.json', 'r')`. As you can see, I had this file saved to a folder in my Google Drive; nevertheless, the user will have to change the specified directory to match that of where the .json file is located for them. Next, the code used to import the .h5 file is as follows: `loaded_model.load_weights("/content/drive/My Drive/Brain Tumor CNN/brain_tumor_model.h5")`. This too will need to be changed to match the directory that the user saved the .h5 file in.
-* Finally, the user will need to obtain an image of a brain scan in question. How to go about obtaining this image is up to the user's disgression. The image can be of any format. Once obtained, save the image to a desired directory. The line of code within the program used to make a prediction about the image is as follows: `user_data = test_datagen.flow_from_directory('/content/drive/My Drive/Brain Tumor CNN/User-Data/test', target_size = (64, 64), batch_size = 1, class_mode = 'binary')`. As can be seen, the image that I used was located inside of my Google Drive. This directory will need to be changed to match the directory of the user's image.
-* Once the program is run, the user can expect to see one of two messages: 
-  1) The convolutional neural network predicts that that this immage doesn't show signs of hemorrhage.
-  2) The convolutional neural network predicts that this image shows signs of a brain-hemorrhage!
+* First, download the file titled finalized_breast_cancer_model.sav
+* Next, open Anaconda, launch Spyder (used version 3.3.6 to create this program), and run the program titled: breast_cancer_prediction_regression.py
+  - NOTE: You must download and save breast_cancer_prediction_regression.py in the same directory that you saved finalized_breast_cancer_model.sav in.
+  - NOTE: There is another file titled breast_cancer_ann.py. This file contains much of the same code as breast_cancer_prediction_regression.py; however, this is the module that was used to train the ANN, and it is not necessary to re-run this file. The regression equation has been exported to the breast_cancer_prediction_regression.py file, so this is all that needs to be executed.
+* Next, the user will be propted to answer a series of questions relating to data of the sample in questions. These questions likely won't have an relevance to the average person, and the average person won't have access to the necessary data reqired to answer these questions. For this reason, this program is geared more towards professional health-care workers.
+* Once all the data is answered, the user will see the neural network's prediction as to whether the sample is malignant or benign, and they will also see the probability that the data in question is malignant and the probability that it is is benign. The two prediction percentages will add up to 100.
 
 ## Final Thoughts
-* After training the model, our team was able to get it to classify images in the test set with **99.12% accuracy**. The model was trained using the free Google Colaboratory service and their remote GPU, but the time required to train this model was still substantial. If the user has access to more computing power, then this model can be trained with more data and epochs, and reach even higher accuracy. The file used to train the neurl network is titled "Brain_Hemorrhage_CNN.py", and users can feel free to run this program on their own GPU, tune the parameters differently, and use any training data desired.
+* After training the model, our team was able to get it to classify images in the test set with **97.43% accuracy**. This accuracy was obtained with very little testing or manipulation of the hyperparameters. A next step with this project could be using a gradient descent algoithm with the regression equation to find the best values for the hyperparameters. If done, the ANN can likely reach accuracies of over 99%. Furthermore, if more data is used to train the model, then it is also very likely that the prediction accuracy will increase, assuming that overfitting does not occur.
+* Furthermore, there is a file included that is titled breast_cancer_ann_lda. This program runs a linear determinant analysis on the data, and uses this to make a prediciton. This model was created with the idea of dimensionality reduction, and hopefully isolating the most important independent variables, allowing us to discard the non-important variables. There was not enough time to explore this algoirthm further though, so this could be a useful next step with the project.
 
 ## Authors
 
 * **William Schmidt** - [Wil's LikedIn](https://www.linkedin.com/in/william-schmidt-152431168/)
-* **Danial Khan** - [Danial's LikedIn](https://www.linkedin.com/in/danial-khan-98415b18b/)
+* **Danial Khan** - [Danial's LikedIn](https://www.linkedin.com/in/danial-khan-98415b18b/), [Danial's GitHub](https://github.com/danialk1?tab=repositories)
 * **Matthew Meer** - [Matt's LikedIn](https://www.linkedin.com/in/matthew-meer-8356b572/), [Matt's GitHub](https://github.com/meerkat1293?tab=repositories)
 * **Awen Li** - [Awen's GitHub](https://github.com/BabyMochi)
 

@@ -26,7 +26,7 @@ Build and train an Artificial Neural Network that predicts, based on CSV data, w
 
 ## Final Thoughts
 * After training the model, our team was able to get it to classify images in the test set with **97.43% accuracy**. This accuracy was obtained with very little manipulation of the hyperparameters. If more data is used to train the model, then it is very likely that the prediction accuracy will increase, assuming that overfitting does not occur.
-* In addition, there is a file included that is titled breast_cancer_ann_lda. This program runs a linear determinant analysis on the data, and uses this to make a prediciton. This model was created with the idea of dimensionality reduction, and hopefully isolating the most important independent variables and discarding the non-important ones. This would also help to avoid overfititng. There was not enough time to explore this algoirthm further though, so this could be a useful next step with the project.
+* In addition, there is a file included that is titled breast_cancer_ann_lda. This program runs a linear descriminant analysis on the data, and uses this to make a prediciton. This model was created with the idea of dimensionality reduction, and hopefully isolating the most important independent variables and discarding the non-important ones. This would also help to avoid overfititng. There was not enough time to explore this algoirthm further though, so this could be a useful next step with the project.
 
 ## Authors
 
